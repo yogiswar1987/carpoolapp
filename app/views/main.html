@@ -1,9 +1,9 @@
-<div layout="row">
+<div layout="row" style="padding-top: 20px">
   <div>
-    <div style="height: 205px">
+    <div>
       <carousel interval="myInterval">
         <slide ng-repeat="slide in slides" active="slide.active">
-          <img ng-src="{{slide.image}}" style="margin:auto;">
+          <img ng-src="{{slide.image}}" style="height:500px; margin:0 auto;">
 
           <div class="carousel-caption">
             <h4>Slide {{$index}}</h4>
@@ -14,5 +14,37 @@
       </carousel>
     </div>
   </div>
-  <div></div>
+  <div layout="column">
+    <div layout="row" ng-init="toggleSearch = true">
+      <md-input-container ng-show='toggleSearch'>
+        <label></label>
+        <input type='text' ng-model='search'/>
+      </md-input-container>
+      <md-toolbar-item md-tools layout='row'>
+        <a md-button md-default-theme href ng-click='toggleSearch = !toggleSearch' layout-align="center">icon</a>
+      </md-toolbar-item>
+    </div>
+    <div>
+      <md-list>
+        <md-list-item class="md-3-line">
+          <div class="md-list-item-text">
+            <h3>Yogesware</h3>
+            <h4>Marathalli to Majestic</h4>
+            <p>Ride info</p>
+          </div>
+          <md-divider ng-if="!$last"></md-divider>
+        </md-list-item>
+      </md-list>
+      <md-list>
+        <md-list-item class="md-3-line" >
+          <div class="md-list-item-text">
+            <h3>Ravi</h3>
+            <h4>Kundalahalli to Majestic</h4>
+            <p>Ride info</p>
+          </div>
+          <md-divider ng-if="!$last"></md-divider>
+        </md-list-item>
+      </md-list>
+    </div>
+  </div>
 </div>

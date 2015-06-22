@@ -11,9 +11,7 @@ require.config({
     'angular-mocks': '../../bower_components/angular-mocks/angular-mocks',
     'angular-aria': '../../bower_components/angular-aria/angular-aria',
     'angular-material': '../../bower_components/angular-material/angular-material',
-    'ui.bootstrap': '../../bower_components/angular-bootstrap/ui-bootstrap-tpls',
-    'bootstrap': '../../bower_components/bootstrap/dist/js/bootstrap',
-    'jquery': '../../bower_components/jquery/dist/jquery'
+    'ui.bootstrap': '../../bower_components/angular-bootstrap/ui-bootstrap-tpls'
   },
   shim: {
     'angular': {'exports': 'angular'},
@@ -26,16 +24,13 @@ require.config({
     'angular-aria': ['angular'],
     'angular-material': ['angular'],
     'ui.bootstrap': ['angular'],
-    jquery: {'exports':'jquery'},
-    'bootstrap': {'deps': ['jquery']},
     'angular-mocks': {
       deps: ['angular'],
       'exports': 'angular.mock'
     }
   },
   priority: [
-    'angular',
-    'jquery'
+    'angular'
   ]
 });
 
@@ -53,10 +48,8 @@ require([
   'angular-touch',
   'angular-aria',
   'angular-material',
-  'jquery',
-  'bootstrap',
   'ui.bootstrap'
-], function (angular, app, ngRoutes, ngCookies, ngSanitize, ngResource, ngAnimate, ngTouch, ngAria, ngMaterial, jquery, bootstrap, uiBootstrap) {
+], function (angular, app, ngRoutes, ngCookies, ngSanitize, ngResource, ngAnimate, ngTouch, ngAria, ngMaterial, uiBootstrap) {
   'use strict';
   /* jshint ignore:start */
   var $html = angular.element(document.getElementsByTagName('html')[0]);
