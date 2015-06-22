@@ -19,5 +19,8 @@
     "angular-mocks": "^1.3.0"
   },
   "appPath": "app",
-  "moduleName": "carpoolApp"
+  "moduleName": "carpoolApp",
+  "resolutions": {
+    "angular": "1.3.16"
+  }
 }
