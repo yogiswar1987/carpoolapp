@@ -11,26 +11,53 @@ require.config({
     'angular-mocks': '../../bower_components/angular-mocks/angular-mocks',
     'angular-aria': '../../bower_components/angular-aria/angular-aria',
     'angular-material': '../../bower_components/angular-material/angular-material',
-    'ui.bootstrap': '../../bower_components/angular-bootstrap/ui-bootstrap-tpls'
+    'ui.bootstrap': '../../bower_components/angular-bootstrap/ui-bootstrap-tpls',
+    'angular-bootstrap': '../../bower_components/angular-bootstrap/ui-bootstrap-tpls',
+    bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap'
   },
   shim: {
-    'angular': {'exports': 'angular'},
-    'angular-route': ['angular'],
-    'angular-cookies': ['angular'],
-    'angular-sanitize': ['angular'],
-    'angular-resource': ['angular'],
-    'angular-animate': ['angular'],
-    'angular-touch': ['angular'],
-    'angular-aria': ['angular'],
-    'angular-material': ['angular'],
-    'ui.bootstrap': ['angular'],
+    angular: {
+      exports: 'angular'
+    },
+    'angular-route': [
+      'angular'
+    ],
+    'angular-cookies': [
+      'angular'
+    ],
+    'angular-sanitize': [
+      'angular'
+    ],
+    'angular-resource': [
+      'angular'
+    ],
+    'angular-animate': [
+      'angular'
+    ],
+    'angular-touch': [
+      'angular'
+    ],
+    'angular-aria': [
+      'angular'
+    ],
+    'angular-material': [
+      'angular'
+    ],
+    'ui.bootstrap': [
+      'angular'
+    ],
     'angular-mocks': {
-      deps: ['angular'],
-      'exports': 'angular.mock'
+      deps: [
+        'angular'
+      ],
+      exports: 'angular.mock'
     }
   },
   priority: [
     'angular'
+  ],
+  packages: [
+
   ]
 });
 

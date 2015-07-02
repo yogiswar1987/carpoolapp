@@ -9,19 +9,7 @@ define(['angular'], function (angular) {
    * Controller of the carpoolApp
    */
   angular.module('carpoolApp.controllers.MainCtrl', ['ngMaterial', 'ui.bootstrap'])
-    .controller('MainCtrl', function ($scope) {
-      this.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Karma'
-      ];
-      $scope.input1 = 'yogesh';
-      $scope.input2 = 'yo@ge.com';
-      $scope.input3 = '';
-
-      $scope.onClick = function () {
-        alert($scope.input1 + $scope.input2);
-      };
+    .controller('MainCtrl', function ($scope,$location) {
       $scope.myInterval = 5000;
       var slides = $scope.slides = [];
       $scope.addSlide = function () {

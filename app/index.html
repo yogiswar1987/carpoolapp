@@ -51,7 +51,7 @@
                     <span>Carpool</span>
                 </h3>
 
-                   <div layout="row" md-theme="Inputsp">
+                   <div layout="row" md-theme="Inputsp" ng-controller="LoginController" ng-if="!$root.user">
                        <md-input-container>
                            <label>User</label>
                            <input ng-model="user.firstName">
@@ -60,9 +60,14 @@
                            <label>Password</label>
                            <input ng-model="theMax" type="password">
                        </md-input-container>
-                       <md-button layout-align="center"><span flex="50">Login</span></md-button>
+                       <md-button layout-align="center" ng-click="login()"><span flex="50">Login</span></md-button>
                        <md-button layout-align="center"><span>Register</span></md-button>
                    </div>
+      <div layout="row" md-theme="Inputsp" ng-controller="LoginController" ng-if="$root.user">
+        <span flex>
+          {{$root.user.userName}}
+        </span>
+        </div>
     </md-toolbar>
     <md-content ng-view>
 
