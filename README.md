@@ -1,5 +1,4 @@
-# carpool https://travis-ci.org/yogiswar1987/carpoolapp.svg?branch=master
-
+# carpool <img src = "https://travis-ci.org/yogiswar1987/carpoolapp.svg?branch=master"/>
 This project is generated with [yo angular-require generator](https://github.com/aaronallport/generator-angular-require)
 version 1.0.0.
 
