@@ -8,7 +8,7 @@ define(['angular'], function (angular) {
    * # AboutCtrl
    * Controller of the carpoolApp
    */
-  angular.module('carpoolApp.controllers.AboutCtrl', [])
+  angular.module('about', [])
     .controller('AboutCtrl', function () {
       this.awesomeThings = [
         'HTML5 Boilerplate',

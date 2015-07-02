@@ -8,7 +8,7 @@ define(['angular'], function (angular) {
    * # HomeCtrl
    * Controller of the carpoolApp
    */
-  angular.module('carpoolApp.controllers.HomeCtrl', [])
+  angular.module('home', [])
     .controller('HomeCtrl', function ($scope) {
       this.awesomeThings = [
         'HTML5 Boilerplate',

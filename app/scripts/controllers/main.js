@@ -8,7 +8,7 @@ define(['angular'], function (angular) {
    * # MainCtrl
    * Controller of the carpoolApp
    */
-  angular.module('carpoolApp.controllers.MainCtrl', ['ngMaterial', 'ui.bootstrap'])
+  angular.module('main', ['ngMaterial', 'ui.bootstrap'])
     .controller('MainCtrl', function ($scope,$location) {
       $scope.myInterval = 5000;
       var slides = $scope.slides = [];

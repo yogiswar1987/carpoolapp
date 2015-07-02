@@ -11,6 +11,7 @@ require.config({
     'angular-mocks': '../../bower_components/angular-mocks/angular-mocks',
     'angular-aria': '../../bower_components/angular-aria/angular-aria',
     'angular-material': '../../bower_components/angular-material/angular-material',
+    'angular-messages': '../../bower_components/angular-messages/angular-messages',
     'ui.bootstrap': '../../bower_components/angular-bootstrap/ui-bootstrap-tpls',
     'angular-bootstrap': '../../bower_components/angular-bootstrap/ui-bootstrap-tpls',
     bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap'
@@ -40,6 +41,9 @@ require.config({
     'angular-aria': [
       'angular'
     ],
+    'angular-messages': [
+      'angular'
+    ],
     'angular-material': [
       'angular'
     ],
@@ -56,9 +60,7 @@ require.config({
   priority: [
     'angular'
   ],
-  packages: [
-
-  ]
+  packages: []
 });
 
 //http://code.angularjs.org/1.2.1/docs/guide/bootstrap#overview_deferred-bootstrap
@@ -74,9 +76,10 @@ require([
   'angular-animate',
   'angular-touch',
   'angular-aria',
+  'angular-messages',
   'angular-material',
   'ui.bootstrap'
-], function (angular, app, ngRoutes, ngCookies, ngSanitize, ngResource, ngAnimate, ngTouch, ngAria, ngMaterial, uiBootstrap) {
+], function (angular, app, ngRoutes, ngCookies, ngSanitize, ngResource, ngAnimate, ngTouch, ngAria, ngMessages, ngMaterial, uiBootstrap) {
   'use strict';
   /* jshint ignore:start */
   var $html = angular.element(document.getElementsByTagName('html')[0]);

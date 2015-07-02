@@ -1,5 +1,5 @@
 /*jshint unused: vars */
-define(['angular', 'controllers/main', 'controllers/about', 'controllers/home']/*deps*/, function (angular, MainCtrl, AboutCtrl, HomeCtrl)/*invoke*/ {
+define(['angular', 'controllers/main', 'controllers/about', 'controllers/home','controllers/login']/*deps*/, function (angular, MainCtrl, AboutCtrl, HomeCtrl,LoginCtrl)/*invoke*/ {
   'use strict';
 
   /**
@@ -11,9 +11,10 @@ define(['angular', 'controllers/main', 'controllers/about', 'controllers/home']/
    * Main module of the application.
    */
   return angular
-    .module('carpoolApp', ['carpoolApp.controllers.MainCtrl',
-      'carpoolApp.controllers.AboutCtrl',
-      'carpoolApp.controllers.HomeCtrl',
+    .module('carpoolApp', ['main',
+      'about',
+      'home',
+      'login',
 /*angJSDeps*/
       'ngCookies',
       'ngAria',
@@ -22,16 +23,9 @@ define(['angular', 'controllers/main', 'controllers/about', 'controllers/home']/
       'ngRoute',
       'ngAnimate',
       'ngTouch',
+      'ngMessages',
       'ngMaterial'
-    ]).controller('LoginController', function ($scope,$location,$rootScope) {
-      $scope.login = function () {
-        console.log('Logged on');
-        $rootScope.user = {userName:"yogi"}
-        $location.path("/home");
-
-      };
-    }
-  )
+    ])
     .config(function ($routeProvider, $mdThemingProvider) {
       $routeProvider
         .when('/main', {
