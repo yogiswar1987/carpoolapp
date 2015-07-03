@@ -5,7 +5,7 @@ define(['angular', 'angular-mocks', 'app'], function(angular, mocks, app) {
   describe('Controller: HomeCtrl', function () {
 
     // load the controller's module
-    beforeEach(module('carpoolApp.controllers.HomeCtrl'));
+    beforeEach(module('home'));
 
     var HomeCtrl,scope;
 

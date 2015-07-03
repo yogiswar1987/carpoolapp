@@ -6,7 +6,7 @@ define(['angular', 'angular-mocks', 'app', 'angular-material',
   describe('Controller: MainCtrl', function () {
 
     // load the controller's module
-    beforeEach(module('carpoolApp.controllers.MainCtrl'));
+    beforeEach(module('main'));
     beforeEach(module('ngMaterial'));
     beforeEach(module('ui.bootstrap'));
 

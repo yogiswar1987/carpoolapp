@@ -23,6 +23,7 @@ requirejs.config({
     'angular-mocks': '../../bower_components/angular-mocks/angular-mocks',
     'angular-aria': '../../bower_components/angular-aria/angular-aria',
     'angular-material': '../../bower_components/angular-material/angular-material',
+    'angular-messages': '../../bower_components/angular-messages/angular-messages',
     'ui.bootstrap': '../../bower_components/angular-bootstrap/ui-bootstrap-tpls',
     'angular-bootstrap': '../../bower_components/angular-bootstrap/ui-bootstrap-tpls',
     bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap'

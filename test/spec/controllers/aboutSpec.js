@@ -5,7 +5,7 @@ define(['angular', 'angular-mocks', 'app'], function(angular, mocks, app) {
   describe('Controller: AboutCtrl', function () {
 
     // load the controller's module
-    beforeEach(module('carpoolApp.controllers.AboutCtrl'));
+    beforeEach(module('about'));
 
     var AboutCtrl;
 
