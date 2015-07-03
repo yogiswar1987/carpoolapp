@@ -88,3 +88,7 @@ body {
 .md-Inputsp-theme label {
   color: lightgray !important;
 }
+
+[ng-click]{
+  cursor: pointer;
+}
