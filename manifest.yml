@@ -1,0 +1,8 @@
+---
+applications:
+- name: carpoolapp
+  memory: 256M
+  instances: 1
+  host: carpoolapp
+  path: .
+  buildpack: https://github.com/cloudfoundry/heroku-buildpack-nodejs
