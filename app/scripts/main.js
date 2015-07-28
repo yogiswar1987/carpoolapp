@@ -14,9 +14,20 @@ require.config({
     'angular-messages': '../../bower_components/angular-messages/angular-messages',
     'ui.bootstrap': '../../bower_components/angular-bootstrap/ui-bootstrap-tpls',
     'angular-bootstrap': '../../bower_components/angular-bootstrap/ui-bootstrap-tpls',
-    bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap'
+    bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap',
+    'jquery': '../../bower_components/jquery/dist/jquery',
+    'jquery-ui': '../../bower_components/jquery-ui/jquery-ui'
   },
   shim: {
+    jquery: {
+      exports: 'jquery'
+    },
+    'jquery-ui': {
+      deps: [
+        'jquery'
+      ],
+      exports: 'jquery-ui'
+    },
     angular: {
       exports: 'angular'
     },

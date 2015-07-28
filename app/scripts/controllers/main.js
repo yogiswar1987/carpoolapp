@@ -1,4 +1,4 @@
-define(['angular'], function (angular) {
+define(['angular','jquery'], function (angular) {
   'use strict';
 
   /**
@@ -9,7 +9,10 @@ define(['angular'], function (angular) {
    * Controller of the carpoolApp
    */
   angular.module('main', ['ngMaterial', 'ui.bootstrap'])
-    .controller('MainCtrl', function ($scope,$location) {
+    .controller('MainCtrl', function ($scope,$rootScope,$location) {
+
+      $rootScope.showMenu = false;
+
       $scope.myInterval = 5000;
       var slides = $scope.slides = [];
       $scope.addSlide = function () {

@@ -24,7 +24,7 @@
 <![endif]-->
 
 <div>
-  <md-toolbar layout="row" layout-align="space-between center">
+  <md-toolbar layout="row" layout-align="space-between center" class="toolbarStyle">
 
     <h3>
       <span>Carpool</span>
@@ -65,6 +65,8 @@
   <md-content ng-view>
 
   </md-content>
+
+  <div ng-show="showMenu" ng-include src="'views/menu.html'"></div>
 </div>
 
 

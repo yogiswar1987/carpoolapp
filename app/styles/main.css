@@ -92,3 +92,81 @@ body {
 [ng-click]{
   cursor: pointer;
 }
+
+.toolbarStyle{
+  background: #10CFBD;
+}
+
+/* Menu Styles *//*
+
+body{
+  background-color: bisque;
+}*/
+
+.mainDivStyle{
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #60d7a9;
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+
+#mainDiv div:nth-child(1){
+  position: absolute;
+  top: 0;
+  left: 50px;
+
+  height:50px;
+  width:50px;
+  border: 1px solid black;
+  background-color: #fdc162;
+  border-radius: 10px;
+
+}
+
+#mainDiv div:nth-child(2){
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height:50px;
+  width:50px;
+  border: 1px solid black;
+  background-color: bisque;
+  border-radius: 10px;
+}
+
+#mainDiv div:nth-child(3){
+  position: absolute;
+  top: 50px;
+  left: 0;
+
+  height:50px;
+  width:50px;
+  border: 1px solid black;
+  background-color: #fd6a62;
+  border-radius: 10px;
+}
+#mainDiv div:nth-child(4){
+  top: 50px;
+  left: 50px;
+  position: absolute;
+
+  height:50px;
+  width:50px;
+  border: 1px solid black;
+  background-color: #F68DBE;
+  border-radius: 10px;
+}
+
+.profileBtnStyle{
+  right: -38%;
+  background-color: bisque;
+}
+
+
