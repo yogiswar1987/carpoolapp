@@ -5,4 +5,4 @@ applications:
   instances: 1
   host: carpoolapp
   path: .
-  buildpack: https://github.com/cloudfoundry/heroku-buildpack-nodejs
+  buildpack: https://github.com/cloudfoundry-community/nginx-buildpack

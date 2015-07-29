@@ -1,7 +1,7 @@
 define(['angular', 'services/login'], function (angular) {
   'use strict';
   angular
-    .module('login').controller('LoginController', function ($scope, $location, $rootScope, LoginService) {
+    .module('login').controller('LoginController', function ($scope, $location, $rootScope, LoginService,$mdDialog) {
       $scope.login = function () {
         console.log('Logging in');
         if ($scope.userName && $scope.password && $scope.userName.length > 0 && $scope.password.length > 0) {
@@ -9,6 +9,19 @@ define(['angular', 'services/login'], function (angular) {
           $rootScope.user = LoginService.getUser();
           $location.path("/home");
         }
+      };
+      $scope.registeruser = function(ev) {
+        $mdDialog.show({
+          templateUrl: 'views/register.html',
+          controller: 'RegisterCtrl',
+          parent: angular.element(document.body),
+          targetEvent: ev,
+        })
+          .then(function(answer) {
+            $scope.alert = 'You said the information was "' + answer + '".';
+          }, function() {
+            $scope.alert = 'You cancelled the dialog.';
+          });
       };
     }
   );

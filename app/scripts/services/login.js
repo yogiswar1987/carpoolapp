@@ -1,7 +1,7 @@
 define(['angular'], function (angular) {
   'use strict';
   angular
-    .module('login', ['ngMessages']).service('LoginService', function ($http) {
+    .module('login', ['ngMessages','carpoolApp.controllers.RegisterCtrl']).service('LoginService', function ($http) {
       var user = {userName: "yogi"};
       this.getUser = function () {
         return user;
