@@ -12,21 +12,21 @@
     <md-dialog-content>
       <div>
           <md-input-container>
-            <label>First Name</label>
-            <input ng-model="firstName" name="firstName" required/>
+            <label>Name</label>
+            <input ng-model="name" name="name" required/>
 
-            <div ng-messages="registerForm.firstName.$error"
-                 ng-show="registerForm.firstName.$touched">
+            <div ng-messages="registerForm.name.$error"
+                 ng-show="registerForm.name.$touched">
               <div ng-message="required">First name is required.</div>
             </div>
           </md-input-container>
           <md-input-container>
-            <label>Last Name</label>
-            <input ng-model="lastName" name="lastName" required/>
+            <label>Phone No</label>
+            <input ng-model="phoneNo" name="phoneNo" required/>
 
-            <div ng-messages="registerForm.lastName.$error"
-                 ng-show="registerForm.lastName.$touched">
-              <div ng-message="required">Last name is required.</div>
+            <div ng-messages="registerForm.phoneNo.$error"
+                 ng-show="registerForm.phoneNo.$touched">
+              <div ng-message="required">Phone number is required.</div>
             </div>
           </md-input-container>
 
@@ -37,16 +37,20 @@
             <div ng-messages="registerForm.email.$error"
                  ng-show="registerForm.email.$touched">
               <div ng-message="required">Email is required.</div>
+              <div ng-message="email">Email address is invalid</div>
             </div>
           </md-input-container>
-
+          <md-radio-group ng-model="gender" layout="row" >
+            <md-radio-button value="M" class="md-primary">Male</md-radio-button>
+            <md-radio-button value="F">Female</md-radio-button>
+          </md-radio-group>
           <md-input-container>
             <label>Password</label>
             <input ng-model="password" name="password" type="password" required/>
 
             <div ng-messages="registerForm.password.$error"
                  ng-show="registerForm.password.$touched">
-              <div ng-message="required">This is required.</div>
+              <div ng-message="required">Password is required.</div>
             </div>
           </md-input-container>
       </div>

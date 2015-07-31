@@ -31,8 +31,18 @@ define(['angular', 'controllers/main', 'controllers/about', 'controllers/home','
       'ngTouch',
       'ngMessages',
       'ngMaterial'
-    ])
+    ]).directive('disableAnimation', function($animate){
+    return {
+      restrict: 'A',
+      link: function($scope, $element, $attrs){
+        $attrs.$observe('disableAnimation', function(value){
+          $animate.enabled(!value, $element);
+        });
+      }
+    }
+  })
     .config(function ($routeProvider, $mdThemingProvider) {
+
       $routeProvider
         .when('/main', {
           templateUrl: 'views/main.html',

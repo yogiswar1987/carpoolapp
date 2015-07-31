@@ -9,7 +9,18 @@ define(['angular'], function (angular) {
    * Service in the carpoolApp.
    */
   angular.module('carpoolApp.services.Register', [])
-	.service('Register', function () {
-	// AngularJS will instantiate a singleton by calling "new" on this function
-	});
+    .service('Register', function ($http,$q) {
+      var deferred = $q.defer();
+      this.register = function (user) {
+        $http.put('dishaapiserver/rest/user?phone=' + user.phone + '&name=' + user.name + '&pwd=' + user.password + '&gender=' + user.gender + '&email=' + user.email)
+          .success(function(data, status, headers, config) {
+            deferred.resolve(data);
+          }).
+          error(function(data, status, headers, config) {
+            deferred.reject(data);
+          });
+        return deferred.promise;
+      };
+
+    });
 });
