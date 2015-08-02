@@ -1,49 +1,85 @@
 <div id="profileDiv" onshow="triggerClick()" style="height: 100%">
   <div layout="row" flex layout-align="center" style="padding-top: 20px;">
-    <md-card flex=25 ng-click>
-      <img ng-src="images\car2.jpg" class="md-card-image" alt="profile pic">
-      <div>
-        <div layout="row">
-          <h2 class="md-title">User Details</h2>
-        </div>
-        <form  novalidate layout="column">
+    <md-card flex=45>
+      <div layout="row">
+        <img ng-src="images\car2.jpg" class="md-card-image" alt="profile pic" flex>
+
+        <h2 class="md-title" flex>User Detail</h2>
+      </div>
+      <md-card-content>
+        <div>
           <md-input-container>
-            <label>User Name</label>
-            <input ng-model="userName" name="userName" ng-model="userDetail.userProfile.userName" required/>
-            <div ng-messages="loginForm.userName.$error"
-                 ng-show="loginForm.userName.$touched">
+            <label>Mobile number</label>
+            <input name="phone" ng-model="userDetail.user.phone" disabled/>
+          </md-input-container>
+          <md-input-container>
+            <label>Referral code</label>
+            <input name="userName" ng-model="userDetail.user.referralCode" disabled/>
+          </md-input-container>
+          <form name="profileForm" ng-submit="saveProfile()" novalidate layout="column">
+            <md-input-container>
+              <label>User Name</label>
+              <input name="userName" ng-model="userDetail.userProfile.userName" required/>
+
+              <div ng-messages="profileForm.userName.$error"
+                   ng-show="profileForm.userName.$touched">
+                <div ng-message="required">This is required.</div>
+              </div>
+            </md-input-container>
+            <div layout="row">
+              <md-radio-group ng-model="userDetail.user.gender" layout="row">
+                <md-radio-button value="m" class="md-primary">Male</md-radio-button>
+                <md-radio-button value="f">Female</md-radio-button>
+              </md-radio-group>
+            </div>
+            <div class="md-actions">
+              <md-button layout-align="center" ng-click="saveProfile()"><span flex="50">Save</span></md-button>
+            </div>
+          </form>
+
+        </div>
+      </md-card-content>
+    </md-card>
+
+    <md-card flex=45>
+      <div layout="row">
+        <img ng-src="images\car2.jpg" class="md-card-image" alt="Vehicle image">
+
+        <h2 class="md-title">Vehicle Details</h2>
+      </div>
+      <md-card-content>
+        <form name="vehicleForm" ng-submit="saveVehicle()" novalidate layout="column">
+          <md-input-container>
+            <label>Model</label>
+            <input name="model" ng-model="userDetail.vehicle.model" required/>
+
+            <div ng-messages="vehicleForm.model.$error"
+                 ng-show="vehicleForm.model.$touched">
               <div ng-message="required">This is required.</div>
             </div>
           </md-input-container>
+          <md-input-container>
+            <label>Capacity</label>
+            <input name="capacity" ng-model="userDetail.vehicle.capacity" required/>
 
-          <div layout="row">
-            <label>Gender :</label>
-            <md-radio-group ng-model="data.group1" layout="row">
-              <md-radio-button value="M" class="md-primary">Male</md-radio-button>
-              <md-radio-button value="F">Female</md-radio-button>
-            </md-radio-group>
+            <div ng-messages="vehicleForm.capacity.$error"
+                 ng-show="vehicleForm.capacity.$touched">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+          <md-input-container>
+            <label>Fare</label>
+            <input name="fare" ng-model="userDetail.vehicle.fare" required/>
+
+            <div ng-messages="vehicleForm.fare.$error"
+                 ng-show="vehicleForm.fare.$touched">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+          <div class="md-actions">
+            <md-button layout-align="center" ng-click="saveVehicle()"><span flex="50">Save</span></md-button>
           </div>
-          <md-button layout-align="center" ng-click=""><span flex="50">Save</span></md-button>
         </form>
-      </div>
-    </md-card>
-
-    <md-card flex=25 ng-click>
-      <img ng-src="images\car2.jpg" class="md-card-image" alt="profile pic">
-      <md-card-content>
-        <div layout="row">
-          <h2 class="md-title">Vehicle Details</h2>
-        </div>
-        <label for="model">Model</label>
-
-        <p id="model" iname="model">{{userDetail.vehicle.model}}</p>
-        <label for="fare">Fare</label>
-
-        <p id="fare" name="fare">{{userDetail.vehicle.fare}} Rs</p>
-
-        <div layout="row">
-          <md-button class="profileBtnStyle">Save</md-button>
-        </div>
       </md-card-content>
     </md-card>
 

@@ -31,14 +31,16 @@
     </h3>
 
     <div layout="row" md-theme="Inputsp" ng-controller="LoginController" ng-if="!$root.user">
-      <form name="loginForm" ng-submit="login()" novalidate layout="row">
+      <form name="loginForm" ng-submit="login($event)" novalidate layout="row">
         <md-input-container>
-          <label>User</label>
-          <input ng-model="userName" name="userName" required/>
+          <label>Phone Number</label>
+          <input ng-model="userName" name="userName" min=10 max=11 required/>
 
           <div ng-messages="loginForm.userName.$error"
                ng-show="loginForm.userName.$touched">
             <div ng-message="required">This is required.</div>
+            <div ng-message="min">Not a valid mobile number</div>
+            <div ng-message="max">Not a valid mobile number</div>
           </div>
         </md-input-container>
 
@@ -52,16 +54,21 @@
           </div>
         </md-input-container>
         <md-button layout-align="center" ng-click="loginForm.submit">Login</md-button>
-        <md-button layout-align="center" ng-click="registeruser($event)">Register</md-button>
       </form>
+
+      <md-button layout-align="center" ng-click="registeruser($event)">Register</md-button>
     </div>
 
     <div layout="row" md-theme="Inputsp" ng-controller="LoginController" ng-if="$root.user">
         <span flex>
-          {{$root.user.userName}}
+          {{$root.user.phone}}
         </span>
     </div>
   </md-toolbar>
+  <div layout="row" ng-controller="LoginController" ng-if="!$root.user">
+    <span flex="88"></span>
+    <a href="#" ng-click="forgotPassword()">forgot password</a>
+  </div>
   <md-content ng-view style="height: 95%">
 
   </md-content>

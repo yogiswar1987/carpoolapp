@@ -1,0 +1,37 @@
+<md-dialog aria-label="Activete Account" flex="70">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Account activation</h2>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    Your account is not active,Please enter Activation code sent to your mobile.
+    <form name="activateAccountForm" ng-submit="activate()" novalidate layout="column">
+      <md-input-container>
+        <label>Activation code</label>
+        <input ng-model="code" name="code" required/>
+
+        <div ng-messages="activateAccountForm.code.$error"
+             ng-show="activateAccountForm.code.$touched">
+          <div ng-message="required">Activation code is required.</div>
+        </div>
+        <md-whiteframe class="md-whiteframe-z5" layout layout-align="center center">
+          <span> In case if you have not received activation code</span>
+          <md-button ng-click="reSendActivationCode()" class="md-primary">
+            Re-send activation code
+          </md-button>
+        </md-whiteframe>
+      </md-input-container>
+      <div class="md-actions" layout="row">
+        <md-button ng-click="activateAccountForm.submit" class="md-primary">
+          Activate
+        </md-button>
+        <md-button ng-click="cancel()" class="md-primary">
+          Cancel
+        </md-button>
+      </div>
+
+
+    </form>
+  </md-dialog-content>
+</md-dialog>

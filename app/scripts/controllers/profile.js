@@ -12,8 +12,9 @@ define(['angular', 'services/profile', 'controllers/menu'], function (angular) {
     .controller('ProfileCtrl', function ($scope, $rootScope, Profile, $timeout) {
 
       $scope.isEdit = false;
+      $scope.userDetail = {};
       $scope.getProfile = function () {
-        Profile.getProfileinfo($rootScope.user.userName).then(function (data) {
+        Profile.getProfileinfo($rootScope.user.phone).then(function (data) {
           $scope.userDetail = data;
         })
       };
@@ -22,6 +23,20 @@ define(['angular', 'services/profile', 'controllers/menu'], function (angular) {
       };
       $scope.getProfile();
 
+      $scope.saveProfile = function () {
+        Profile.saveProfile(name, gender).then(function (data) {
+        //success message to user
+        }, function (data) {
+
+        })
+      };
+      $scope.saveVehicle = function () {
+        Profile.saveProfile(model,capacity,fare).then(function (data) {
+          //success message to user
+        }, function (data) {
+
+        })
+      };
       $timeout(function () {
         $('#profileMenu').click();
       }, 10);

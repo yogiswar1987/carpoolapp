@@ -9,7 +9,7 @@ define(['angular'], function (angular) {
    * Controller of the carpoolApp
    */
   angular.module('carpoolApp.controllers.RegisterCtrl', ['carpoolApp.services.Register'])
-    .controller('RegisterCtrl', function ($scope,$mdDialog,Register,LoginService) {
+    .controller('RegisterCtrl', function ($scope,$rootScope,$mdDialog,Register,LoginService) {
       $scope.hide = function() {
         $mdDialog.hide();
       };
@@ -25,11 +25,10 @@ define(['angular'], function (angular) {
         user.password = $scope.password;
 
         Register.register(user).then(function(data){
-
-          LoginService.login(user.name, user.password);
+          //activation code popup
+          LoginService.login(user.phone, user.password);
           $rootScope.user = LoginService.getUser();
           $location.path("/home");
-
         });
       };
     });

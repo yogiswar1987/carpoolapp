@@ -9,17 +9,27 @@ define(['angular'], function (angular) {
    * Service in the carpoolApp.
    */
   angular.module('carpoolApp.services.Register', [])
-    .service('Register', function ($http,$q) {
+    .service('Register', function ($http, $q) {
       var deferred = $q.defer();
+
       this.register = function (user) {
-        $http.put('dishaapiserver/rest/user?phone=' + user.phone + '&name=' + user.name + '&pwd=' + user.password + '&gender=' + user.gender + '&email=' + user.email)
-          .success(function(data, status, headers, config) {
+        var urlOpts1 = {
+          method: 'PUT',
+          url: 'dishaapiserver/rest/user?phone=' + user.phone + '&name=' + user.name + '&pwd=' + user.password + '&gender=' + user.gender + '&email=' + user.email,
+          transformResponse: specialTransform
+        };
+        $http(urlOpts1)
+          .success(function (data, status, headers, config) {
             deferred.resolve(data);
           }).
-          error(function(data, status, headers, config) {
+          error(function (data, status, headers, config) {
             deferred.reject(data);
           });
         return deferred.promise;
+      };
+      function specialTransform(data) {
+        console.log("INSIDE SPCIAL RANS", data)
+        return data; //just return the string, don't try to JSON.parse it (angular default(
       };
 
     });
