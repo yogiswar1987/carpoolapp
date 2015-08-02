@@ -323,6 +323,11 @@ module.exports = function (grunt) {
           expand: true,
           cwd: '.',
           dest: '<%= yeoman.dist %>',
+          src: ['manifest.yml','nginx.conf']
+        }, {
+          expand: true,
+          cwd: '.',
+          dest: '<%= yeoman.dist %>',
           src: ['bower_components/requirejs/*']
         }, {
           expand: true,

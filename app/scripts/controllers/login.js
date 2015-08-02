@@ -17,10 +17,6 @@ define(['angular', 'services/login'], function (angular) {
                 controller: 'ActivateAccountCtrl',
                 parent: angular.element(document.body),
                 targetEvent: ev,
-              }).then(function (answer) {
-                $scope.alert = 'You said the information was "' + answer + '".';
-              }, function () {
-                window.alert('You cancelled the dialog.');
               });
             }
           });
@@ -33,12 +29,7 @@ define(['angular', 'services/login'], function (angular) {
           controller: 'RegisterCtrl',
           parent: angular.element(document.body),
           targetEvent: ev,
-        })
-          .then(function (answer) {
-            $scope.alert = 'You said the information was "' + answer + '".';
-          }, function () {
-            window.alert('You cancelled the dialog.');
-          });
+        });
       };
       $scope.forgotPassword = function(ev)
       {
@@ -47,10 +38,6 @@ define(['angular', 'services/login'], function (angular) {
           controller: 'forgotPasswordCtrl',
           parent: angular.element(document.body),
           targetEvent: ev,
-        }).then(function (answer) {
-          $scope.alert = 'You said the information was "' + answer + '".';
-        }, function () {
-          window.alert('You cancelled the dialog.');
         });
       }
     }

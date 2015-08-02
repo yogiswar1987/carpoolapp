@@ -60,7 +60,6 @@ define(['angular'], function (angular) {
       }
 
       function specialTransform(data) {
-        console.log("INSIDE SPCIAL RANS", data)
         return data; //just return the string, don't try to JSON.parse it (angular default(
       };
       // AngularJS will instantiate a singleton by calling "new" on this function

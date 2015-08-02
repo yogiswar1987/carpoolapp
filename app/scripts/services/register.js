@@ -28,7 +28,6 @@ define(['angular'], function (angular) {
         return deferred.promise;
       };
       function specialTransform(data) {
-        console.log("INSIDE SPCIAL RANS", data)
         return data; //just return the string, don't try to JSON.parse it (angular default(
       };
 
