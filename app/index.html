@@ -31,16 +31,17 @@
     </h3>
 
     <div layout="row" md-theme="Inputsp" ng-controller="LoginController" ng-if="!$root.user">
-      <form name="loginForm" ng-submit="login($event)" novalidate layout="row">
+      <form name="loginForm" ng-submit="login($event,loginForm)" novalidate layout="row">
         <md-input-container>
           <label>Phone Number</label>
-          <input ng-model="userName" name="userName" min=10 max=11 required/>
+          <input ng-model="userName" name="userName" minlength=10 maxlength=10 type="tel" required/>
 
           <div ng-messages="loginForm.userName.$error"
                ng-show="loginForm.userName.$touched">
             <div ng-message="required">This is required.</div>
-            <div ng-message="min">Not a valid mobile number</div>
-            <div ng-message="max">Not a valid mobile number</div>
+            <div ng-message="minlength">Not a valid mobile number</div>
+            <div ng-message="maxlength">Not a valid mobile number</div>
+            <div ng-message="number">Not a valid mobile number</div>
           </div>
         </md-input-container>
 

@@ -10,9 +10,10 @@ define(['angular'], function (angular) {
    */
   angular.module('carpoolApp.services.Register', [])
     .service('Register', function ($http, $q) {
-      var deferred = $q.defer();
+
 
       this.register = function (user) {
+        var deferred = $q.defer();
         var urlOpts1 = {
           method: 'PUT',
           url: 'dishaapiserver/rest/user?phone=' + user.phone + '&name=' + user.name + '&pwd=' + user.password + '&gender=' + user.gender + '&email=' + user.email,

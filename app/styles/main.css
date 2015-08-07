@@ -22,6 +22,7 @@ body {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
 }
+
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
@@ -46,6 +47,7 @@ body {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
+
 .jumbotron .btn {
   font-size: 21px;
   padding: 14px 24px;
@@ -55,6 +57,7 @@ body {
 .marketing {
   margin: 40px 0;
 }
+
 .marketing p + h4 {
   margin-top: 28px;
 }
@@ -72,15 +75,18 @@ body {
     padding-left: 0;
     padding-right: 0;
   }
+
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
   }
+
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
   }
 }
+
 .md-Inputsp-theme input {
   color: lightgray !important;
 }
@@ -89,11 +95,11 @@ body {
   color: lightgray !important;
 }
 
-[ng-click]{
+[ng-click] {
   cursor: pointer;
 }
 
-.toolbarStyle{
+.toolbarStyle {
   background: #10CFBD;
 }
 
@@ -103,7 +109,7 @@ body{
   background-color: bisque;
 }*/
 
-.mainDivStyle{
+.mainDivStyle {
   height: 100px;
   width: 100px;
   border: 1px solid black;
@@ -115,58 +121,65 @@ body{
   right: 0;
 }
 
-
-#mainDiv div:nth-child(1){
+#mainDiv div:nth-child(1) {
   position: absolute;
   top: 0;
   left: 50px;
 
-  height:50px;
-  width:50px;
+  height: 50px;
+  width: 50px;
   border: 1px solid black;
   background-color: #fdc162;
   border-radius: 10px;
 
 }
 
-#mainDiv div:nth-child(2){
+#mainDiv div:nth-child(2) {
   position: absolute;
   top: 0;
   left: 0;
 
-  height:50px;
-  width:50px;
+  height: 50px;
+  width: 50px;
   border: 1px solid black;
   background-color: bisque;
   border-radius: 10px;
 }
 
-#mainDiv div:nth-child(3){
+#mainDiv div:nth-child(3) {
   position: absolute;
   top: 50px;
   left: 0;
 
-  height:50px;
-  width:50px;
+  height: 50px;
+  width: 50px;
   border: 1px solid black;
   background-color: #fd6a62;
   border-radius: 10px;
 }
-#mainDiv div:nth-child(4){
+
+#mainDiv div:nth-child(4) {
   top: 50px;
   left: 50px;
   position: absolute;
 
-  height:50px;
-  width:50px;
+  height: 50px;
+  width: 50px;
   border: 1px solid black;
   background-color: #F68DBE;
   border-radius: 10px;
 }
 
-.profileBtnStyle{
+.profileBtnStyle {
   right: -38%;
   background-color: bisque;
 }
 
+md-toast.md-success-toast-theme {
+  background-color: red;
+}
+
+.error {
+  color: red;
+}
 

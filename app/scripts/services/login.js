@@ -3,11 +3,12 @@ define(['angular'], function (angular) {
   angular
     .module('login', ['ngMessages', 'carpoolApp.controllers.RegisterCtrl']).service('LoginService', function ($http, $q) {
       var user = {};
-      var deferred = $q.defer();
+
       this.getUser = function () {
         return user;
       };
       this.login = function (userName, password) {
+        var deferred = $q.defer();
         var urlOpts1 = {
           method: 'GET',
           url: 'dishaapiserver/rest/user/login?userId=' + userName + '&pwd=' + password,
@@ -29,6 +30,7 @@ define(['angular'], function (angular) {
       };
 
       this.activateAccount = function (phone, activationCode) {
+        var deferred = $q.defer();
         var urlOpts1 = {
           method: 'GET',
           url: 'dishaapiserver/rest/user/activateAccount?userId=' + phone + '&activationCode=' + activationCode,
@@ -45,6 +47,7 @@ define(['angular'], function (angular) {
       };
 
       this.chechkAccountStatus = function (phone) {
+        var deferred = $q.defer();
         var urlOpts1 = {
           method: 'GET',
           url: 'dishaapiserver/rest/user/entity?phone=' + phone,
@@ -59,8 +62,8 @@ define(['angular'], function (angular) {
           });
         return deferred.promise;
       };
-      this.resendPassword = function(phone)
-      {
+      this.resendPassword = function (phone) {
+        var deferred = $q.defer();
         var urlOpts1 = {
           method: 'GET',
           url: 'dishaapiserver/rest/user/password?phone=' + phone,
@@ -74,7 +77,23 @@ define(['angular'], function (angular) {
             deferred.reject(data);
           });
         return deferred.promise;
-      }
+      };
+      this.reSendActivationCode = function (phone) {
+        var deferred = $q.defer();
+        var urlOpts1 = {
+          method: 'PUT',
+          url: 'dishaapiserver/rest/user/activationCode?phone=' + phone,
+          transformResponse: specialTransform
+        };
+        $http(urlOpts1)
+          .success(function (data, status, headers, config) {
+            deferred.resolve(data);
+          }).
+          error(function (data, status, headers, config) {
+            deferred.reject(data);
+          });
+        return deferred.promise;
+      };
     }
   );
 });

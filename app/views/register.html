@@ -1,67 +1,72 @@
-<md-dialog aria-label="Register" flex = "25">
-  <form name="registerForm" ng-submit="register()" novalidate layout="column">
-    <md-toolbar>
-      <div class="md-toolbar-tools">
-        <h2>Register</h2>
-        <span flex></span>
-        <md-button class="md-icon-button" ng-click="answer('not applicable')">
-          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
-        </md-button>
-      </div>
-    </md-toolbar>
-    <md-dialog-content>
-      <div>
-          <md-input-container>
-            <label>Name</label>
-            <input ng-model="name" name="name" required/>
-
-            <div ng-messages="registerForm.name.$error"
-                 ng-show="registerForm.name.$touched">
-              <div ng-message="required">First name is required.</div>
-            </div>
-          </md-input-container>
-          <md-input-container>
-            <label>Phone No</label>
-            <input ng-model="phoneNo" name="phoneNo" required/>
-
-            <div ng-messages="registerForm.phoneNo.$error"
-                 ng-show="registerForm.phoneNo.$touched">
-              <div ng-message="required">Phone number is required.</div>
-            </div>
-          </md-input-container>
-
-          <md-input-container >
-           <!-- <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>-->
-            <label>Email</label>
-            <input ng-model="email" name = "email" type="email" ng-required="true">
-            <div ng-messages="registerForm.email.$error"
-                 ng-show="registerForm.email.$touched">
-              <div ng-message="required">Email is required.</div>
-              <div ng-message="email">Email address is invalid</div>
-            </div>
-          </md-input-container>
-          <md-radio-group ng-model="gender" layout="row" >
-            <md-radio-button value="M" class="md-primary">Male</md-radio-button>
-            <md-radio-button value="F">Female</md-radio-button>
-          </md-radio-group>
-          <md-input-container>
-            <label>Password</label>
-            <input ng-model="password" name="password" type="password" required/>
-
-            <div ng-messages="registerForm.password.$error"
-                 ng-show="registerForm.password.$touched">
-              <div ng-message="required">Password is required.</div>
-            </div>
-          </md-input-container>
-      </div>
-    </md-dialog-content>
-    <div class="md-actions" layout="row">
-      <md-button ng-click="registerForm.submit" class="md-primary">
-       Register
-      </md-button>
-      <md-button ng-click="cancel()" class="md-primary">
-        Cancel
+<md-dialog aria-label="Register" flex="25">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Register</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="answer('not applicable')">
+        <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
       </md-button>
     </div>
-  </form>
+  </md-toolbar>
+  <md-dialog-content>
+    <div ng-show="formErrorMsg"><p class="error">{{formErrorMsg}}</p></div>
+    <form name="registerForm" novalidate layout="column">
+      <div>
+        <md-input-container>
+          <label>Name</label>
+          <input ng-model="name" name="name" required/>
+
+          <div ng-messages="registerForm.name.$error"
+               ng-show="registerForm.name.$touched">
+            <div ng-message="required">First name is required.</div>
+          </div>
+        </md-input-container>
+        <md-input-container>
+          <label>Phone No</label>
+          <input ng-model="phoneNo" name="phoneNo" minlength=10 maxlength=10 type="tel" required/>
+
+          <div ng-messages="registerForm.phoneNo.$error"
+               ng-show="registerForm.phoneNo.$touched">
+            <div ng-message="required">Phone number is required.</div>
+            <div ng-message="minlength">Not a valid mobile number</div>
+            <div ng-message="maxlength">Not a valid mobile number</div>
+            <div ng-message="number">Not a valid mobile number</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container>
+          <!-- <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>-->
+          <label>Email</label>
+          <input ng-model="email" name="email" type="email" ng-required="true">
+
+          <div ng-messages="registerForm.email.$error"
+               ng-show="registerForm.email.$touched">
+            <div ng-message="required">Email is required.</div>
+            <div ng-message="email">Email address is invalid</div>
+          </div>
+        </md-input-container>
+        <md-radio-group ng-model="gender" layout="row">
+          <md-radio-button value="M" class="md-primary">Male</md-radio-button>
+          <md-radio-button value="F">Female</md-radio-button>
+        </md-radio-group>
+        <md-input-container>
+          <label>Password</label>
+          <input ng-model="password" name="password" type="password" required/>
+
+          <div ng-messages="registerForm.password.$error"
+               ng-show="registerForm.password.$touched">
+            <div ng-message="required">Password is required.</div>
+          </div>
+        </md-input-container>
+      </div>
+    </form>
+  </md-dialog-content>
+  <div class="md-actions" layout="row">
+    <md-button ng-click="registerForm.$valid && register($event)" class="md-primary">
+      Register
+    </md-button>
+    <md-button ng-click="cancel()" class="md-primary">
+      Cancel
+    </md-button>
+  </div>
 </md-dialog>
