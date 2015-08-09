@@ -111,7 +111,7 @@ define(['angular', 'services/login'], function (angular) {
           });
         });
       };
-    }).controller('forgotPasswordCtrl', function ($scope, $location, $rootScope, LoginService, $mdDialog) {
+    }).controller('forgotPasswordCtrl', function ($scope, $location, $rootScope, LoginService, $mdDialog,$mdToast) {
       $scope.cancel = function () {
         $mdDialog.cancel();
       };
