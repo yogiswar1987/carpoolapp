@@ -2,24 +2,15 @@
   <div layout="row" flex layout-align="center" style="padding-top: 20px;">
     <md-card flex=45>
       <div layout="row">
-        <img ng-src="images\car2.jpg" class="md-card-image" alt="profile pic" flex style="height: 25%;width: 25%">
-        <div layout="column" flex>
-        <h2 class="md-title" flex>User Detail</h2>
-          <a href ng-click="chnagePassword($event)" flex>Change password</a>
-          <div layout="column"><p>Account balance : {{accountBalance}}</p>
-            <form name="redeemForm">
-            <md-input-container>
-              <label>Points to redeem</label>
-              <input name="points" ng-model="points" required number/>
-              <div ng-messages="redeemForm.points.$error"
-                   ng-show="redeemForm.points.$touched">
-                <div ng-message="required">This is required.</div>
-                <div ng-message="number">Invalid entry.</div>
-              </div>
-            </md-input-container>
-              <md-button layout-align="center" ng-click="redeemPoints()"><span flex="50">Reedem</span></md-button>
-            </form>
+        <div class="profile-pic">
+          <div class="round">
+          <img ng-src="{{userDetail.userImage.imageURI}}" class="md-card-image" alt="profile pic" flex style="height: 25%;width: 25%">
           </div>
+          <input type="file" name="file" onchange="angular.element(this).scope().UploadImage(this.files)"/>
+        </div>
+        <div layout="column" flex>
+          <h2 class="md-title" flex>User Detail</h2>
+          <a href ng-click="chnagePassword($event)" flex>Change password</a>
         </div>
       </div>
       <md-card-content>
@@ -59,8 +50,13 @@
 
     <md-card flex=45>
       <div layout="row">
-        <img ng-src="images\car2.jpg" class="md-card-image" alt="profile pic" flex style="height: 50%;width: 50%">
-        <h2 class="md-title" flex>Vehicle Detail</h2>
+        <div class="profile-pic">
+          <div class="round">
+            <img ng-src="images\car2.jpg" class="md-card-image" alt="profile pic" flex style="height: 50%;width: 50%">
+          </div>
+          <input type="file" name="file" onchange="angular.element(this).scope().UploadImage(this.files)"/>
+        </div>
+        <h2 class="md-title" flex="50">Vehicle Detail</h2>
       </div>
       <md-card-content>
         <form name="vehicleForm" novalidate layout="column">

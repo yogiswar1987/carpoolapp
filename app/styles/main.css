@@ -182,4 +182,39 @@ md-toast.md-success-toast-theme {
 .error {
   color: red;
 }
+.round {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+}
+.round img {
+  display: block;
+  /* Stretch
+        height: 100%;
+        width: 100%; */
+  min-width: 100%;
+  min-height: 100%;
+}
 
+.profile-pic {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-pic:hover .edit {
+  display: block;
+}
+
+.edit {
+  padding-top: 7px;
+  padding-right: 7px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+}
+
+.edit a {
+  color: #000;
+}

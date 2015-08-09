@@ -1,0 +1,23 @@
+<div id="profileDiv" onshow="triggerClick()" style="height: 100%">
+  <div layout="row" flex layout-align="center" style="padding-top: 20px;">
+    <md-card flex=45>
+      <h2 class="md-title" flex>Account detail</h2>
+      <md-card-content>
+        <div layout="column"><p>Account balance : {{accountBalance}}</p>
+        <form name="redeemForm">
+          <md-input-container>
+            <label>Points to redeem</label>
+            <input name="points" ng-model="points" required number/>
+
+            <div ng-messages="redeemForm.points.$error"
+                 ng-show="redeemForm.points.$touched">
+              <div ng-message="required">This is required.</div>
+              <div ng-message="number">Invalid entry.</div>
+            </div>
+          </md-input-container>
+          <md-button layout-align="center" ng-click="redeemPoints()"><span flex="50">Reedem</span></md-button>
+        </form>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>

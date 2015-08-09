@@ -1,5 +1,5 @@
 /*jshint unused: vars */
-define(['angular', 'controllers/main', 'controllers/about', 'controllers/home','controllers/login','controllers/menu','controllers/myRides', 'controllers/profile', 'services/profile', 'controllers/register', 'services/register']/*deps*/, function (angular, MainCtrl, AboutCtrl, HomeCtrl,LoginCtrl, MenuCtrl,ProfileCtrl, ProfileService, RegisterCtrl, RegisterService)/*invoke*/ {
+define(['angular', 'controllers/main', 'controllers/about', 'controllers/home','controllers/login','controllers/menu','controllers/myRides', 'controllers/profile', 'services/profile', 'controllers/register', 'services/register', 'controllers/account', 'services/account']/*deps*/, function (angular, MainCtrl, AboutCtrl, HomeCtrl,LoginCtrl, MenuCtrl,ProfileCtrl, ProfileService, RegisterCtrl, RegisterService, AccountCtrl, AccountService)/*invoke*/ {
   'use strict';
 
   /**
@@ -21,6 +21,8 @@ define(['angular', 'controllers/main', 'controllers/about', 'controllers/home','
 'carpoolApp.services.Profile',
 'carpoolApp.controllers.RegisterCtrl',
 'carpoolApp.services.Register',
+'carpoolApp.controllers.AccountCtrl',
+'carpoolApp.services.Account',
 /*angJSDeps*/
       'ngCookies',
       'ngAria',
@@ -73,6 +75,11 @@ define(['angular', 'controllers/main', 'controllers/about', 'controllers/home','
           templateUrl: 'views/register.html',
           controller: 'RegisterCtrl',
           controllerAs: 'register'
+        })
+        .when('/account', {
+          templateUrl: 'views/account.html',
+          controller: 'AccountCtrl',
+          controllerAs: 'account'
         })
         .otherwise({
           redirectTo: '/'
