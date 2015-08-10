@@ -3,7 +3,7 @@
     <div>
       <carousel interval="myInterval" disable-animation="true">
         <slide ng-repeat="slide in slides" active="slide.active">
-          <img ng-src="images\car1.jpg" style="height:500px; margin:0 auto;">
+          <img ng-src="{{slide.image}}" style="height:500px; margin:0 auto;">
           <div class="carousel-caption">
             <h4>Slide {{$index}}</h4>
 

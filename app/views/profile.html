@@ -4,7 +4,7 @@
       <div layout="row">
         <div class="profile-pic">
           <div class="round">
-          <img ng-src="{{userDetail.userImage.imageURI}}" class="md-card-image" alt="profile pic" flex style="height: 25%;width: 25%">
+          <img ng-src="{{userDetail.userImage.imageURI?userDetail.userImage.imageURI:'images/default-user.png'}}" class="md-card-image" alt="profile pic" flex style="height: 25%;width: 25%">
           </div>
           <input type="file" name="file" onchange="angular.element(this).scope().UploadImage(this.files)"/>
         </div>
@@ -52,7 +52,7 @@
       <div layout="row">
         <div class="profile-pic">
           <div class="round">
-            <img ng-src="images\car2.jpg" class="md-card-image" alt="profile pic" flex style="height: 50%;width: 50%">
+            <img ng-src="images\vehicle-clipart-RcdKLLoc9.png" class="md-card-image" alt="profile pic" flex style="height: 50%;width: 50%">
           </div>
           <input type="file" name="file" onchange="angular.element(this).scope().UploadImage(this.files)"/>
         </div>

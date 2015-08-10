@@ -18,12 +18,11 @@ define(['angular','jquery'], function (angular) {
       $scope.addSlide = function () {
         var newWidth = 600 + slides.length + 1;
         slides.push({
-          image: 'http://placekitten.com/' + newWidth + '/300',
-          text: ['More', 'Extra', 'Lots of', 'Surplus'][slides.length % 4] + ' ' +
-          ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
+          image: 'images/QR'+(slides.length+1)+'.jpg',
+          text: ['Go green', 'Make friends', 'Reduce traffic'][slides.length % 4]
         });
       };
-      for (var i = 0; i < 4; i++) {
+      for (var i = 0; i < 3; i++) {
         $scope.addSlide();
       }
     });
